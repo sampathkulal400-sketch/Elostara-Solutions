@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Send, MessageSquare, CheckCircle2, Sparkles, ArrowRight } from "lucide-react";
+import { X, Send, MessageSquare, CheckCircle2, ArrowRight } from "lucide-react";
 
 const WHATSAPP_NUMBER = "918217206292";
 
@@ -13,6 +13,8 @@ interface EnquiryModalProps {
 }
 
 const categoryPills = [
+  "General Enquiry",
+  "Restaurants & Cafes",
   "AI Website Chatbots",
   "AI Customer Support",
   "Lead Gen & Management",
@@ -29,35 +31,63 @@ export default function EnquiryModal({ isOpen, onClose, initialCategory = "" }: 
   const [name, setName] = useState("");
   const [businessName, setBusinessName] = useState("");
   const [phone, setPhone] = useState("");
-  const [businessType, setBusinessType] = useState(initialCategory || "Restaurants & Cafes");
+  const [businessType, setBusinessType] = useState(initialCategory || "General Enquiry");
   const [problemText, setProblemText] = useState("");
   const [budget, setBudget] = useState("");
 
   useEffect(() => {
-    if (initialCategory) {
-      setBusinessType(initialCategory);
-    }
+    const categoryPlaceholderLabels = [
+      "Final Destination CTA",
+      "FAQ Inquiry",
+      "Footer Intake",
+      "Hero Primary CTA",
+      "Mobile Menu CTA",
+      "General Services Consultation",
+      "Custom Project Consultation",
+    ];
+
+    const nextCategory =
+      !initialCategory || categoryPlaceholderLabels.includes(initialCategory)
+        ? "General Enquiry"
+        : categoryPills.includes(initialCategory)
+          ? initialCategory
+          : "General Enquiry";
+
+    const frame = window.requestAnimationFrame(() => setBusinessType(nextCategory));
+    return () => window.cancelAnimationFrame(frame);
   }, [initialCategory]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name || !phone || !problemText) return;
+    const cleanName = name.trim();
+    const cleanPhone = phone.trim();
+    const cleanProblem = problemText.trim();
+    if (!cleanName || !cleanPhone || !cleanProblem) return;
+
+    const phoneDigits = cleanPhone.replace(/\D/g, "");
+    if (phoneDigits.length < 10) return;
 
     const lines = [
-      "New enquiry from " + name,
+      "*NEW PROJECT ENQUIRY*",
       "",
-      "Business: " + (businessName || "Not specified"),
-      "Phone: " + phone,
-      "Category: " + businessType,
+      `*Name:* ${cleanName}`,
+      `*Business:* ${businessName.trim() || "Not provided"}`,
+      `*Phone:* ${cleanPhone}`,
+      `*Category:* ${businessType}`,
       "",
-      "Requirement:",
-      problemText,
-      ...(budget ? ["", "Budget: " + budget] : []),
+      "*Requirement:*",
+      cleanProblem,
+      ...(budget ? ["", `*Budget:* ${budget}`] : []),
     ];
     const message = lines.join("\n");
 
     const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
+    setName("");
+    setBusinessName("");
+    setPhone("");
+    setProblemText("");
+    setBudget("");
     onClose();
   };
 
@@ -152,6 +182,9 @@ export default function EnquiryModal({ isOpen, onClose, initialCategory = "" }: 
                   <input
                     type="tel"
                     required
+                    inputMode="tel"
+                    pattern="[0-9+() -]{10,}"
+                    title="Enter a valid phone number with at least 10 digits"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     placeholder="e.g. 9876543210"
@@ -194,13 +227,19 @@ export default function EnquiryModal({ isOpen, onClose, initialCategory = "" }: 
                 <label className="block font-mono text-[11px] uppercase tracking-wider text-[#848492] font-bold mb-1">
                   Estimated Budget (Optional)
                 </label>
-                <input
-                  type="text"
+                <select
                   value={budget}
                   onChange={(e) => setBudget(e.target.value)}
-                  placeholder="e.g. ₹10,000 – ₹25,000 or Flexible"
                   className="w-full px-4 py-3 rounded-2xl bg-white border border-[#0A0A0D]/15 text-base sm:text-sm text-[#0A0A0D] focus:outline-none focus:border-[#28113B] transition-colors"
-                />
+                >
+                  <option value="">Select a budget range</option>
+                  <option value="Under ₹10,000">Under ₹10,000</option>
+                  <option value="₹10,000 – ₹25,000">₹10,000 – ₹25,000</option>
+                  <option value="₹25,000 – ₹50,000">₹25,000 – ₹50,000</option>
+                  <option value="₹50,000 – ₹1,00,000">₹50,000 – ₹1,00,000</option>
+                  <option value="Above ₹1,00,000">Above ₹1,00,000</option>
+                  <option value="Flexible / Not decided">Flexible / Not decided</option>
+                </select>
               </div>
 
               {/* Submit Button */}
