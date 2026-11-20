@@ -296,7 +296,7 @@ export default function Services({ onOpenEnquiry }: ServicesProps) {
     <section
       id="services"
       ref={ref}
-      className="relative py-12 lg:py-20 overflow-hidden bg-[#F8F8F5] text-[#0A0A0D]"
+      className="relative py-12 lg:py-20 overflow-x-clip bg-[#F8F8F5] text-[#0A0A0D]"
     >
       <div className="section-wrap relative z-10 space-y-8 sm:space-y-10">
         {/* Section Header */}
@@ -350,13 +350,13 @@ export default function Services({ onOpenEnquiry }: ServicesProps) {
         </motion.div>
 
         {/* Asymmetric Editorial Layout: Left Spotlight + Right Numbered Expandable List */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+        <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 xl:gap-10 items-start">
           {/* Left Column: Deep-Dive Featured Spotlight (5 cols) */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-5 lg:sticky lg:top-28"
+            className="xl:col-span-5 xl:sticky xl:top-28"
           >
             <div className="rounded-3xl bg-[#28113B] text-[#FAFAF8] p-6 sm:p-8 lg:p-9 border border-white/10 shadow-[0_20px_45px_rgba(40,17,59,0.18)] space-y-5 sm:space-y-6 relative overflow-hidden">
               <div className="flex items-center justify-between relative z-10">
@@ -425,7 +425,7 @@ export default function Services({ onOpenEnquiry }: ServicesProps) {
           </motion.div>
 
           {/* Right Column: Numbered Expandable Service Accordion (7 cols) */}
-          <div className="lg:col-span-7 space-y-3 sm:space-y-4">
+          <div className="xl:col-span-7 space-y-3 sm:space-y-4">
             {filteredServices.map((service, idx) => {
               const isSelected = selectedServiceId === service.id;
               const isExpanded = expandedItems.includes(service.id);
@@ -525,9 +525,9 @@ export default function Services({ onOpenEnquiry }: ServicesProps) {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="rounded-3xl bg-[#0A0A0D] text-[#FAFAF8] p-6 sm:p-10 border border-white/10 shadow-2xl relative overflow-hidden"
         >
-          <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-8">
+          <div className="relative z-10 flex flex-col 2xl:flex-row items-stretch 2xl:items-center justify-between gap-6 sm:gap-8">
             {/* Left Column: Heading & Tagline */}
-            <div className="space-y-2 text-center lg:text-left">
+            <div className="min-w-0 space-y-2 text-center 2xl:text-left">
               <span className="font-mono text-xs uppercase tracking-widest text-white/60 font-semibold block">
                 Ready to automate your business?
               </span>
@@ -540,7 +540,7 @@ export default function Services({ onOpenEnquiry }: ServicesProps) {
             </div>
 
             {/* Right Column: Direct Phone / WhatsApp from Flyer */}
-            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full lg:w-auto justify-end">
+            <div className="min-w-0 flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full 2xl:w-auto justify-end">
               <div className="text-center sm:text-right">
                 <span className="font-mono text-xs uppercase tracking-widest text-[#CCFF00] font-bold block mb-1">
                   Call or WhatsApp us
