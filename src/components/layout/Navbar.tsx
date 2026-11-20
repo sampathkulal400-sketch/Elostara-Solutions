@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X } from "lucide-react";
 import ElostaraLogo from "@/components/ElostaraLogo";
 
 interface NavbarProps {
@@ -61,7 +62,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
               className="flex items-center gap-1.5 bg-transparent border-none cursor-pointer p-0 group"
               aria-label="Elostara Solutions Home"
             >
-              <ElostaraLogo variant="dark" className="h-8 sm:h-11 md:h-12 max-w-[175px] sm:max-w-[190px] md:max-w-[210px] w-auto object-contain hover:opacity-85 transition-opacity" />
+              <ElostaraLogo variant="dark" className="h-8 sm:h-11 md:h-12 max-w-[175px] sm:max-w-[190px] md:max-w-[150px] lg:max-w-[210px] w-auto object-contain hover:opacity-85 transition-opacity" />
             </button>
 
             <div className="hidden xl:flex items-center gap-2 px-3 py-1 rounded-full bg-[#0A0A0D]/04 border border-[#0A0A0D]/08 font-mono text-[10px] text-[#52525C] uppercase tracking-wider font-semibold">
@@ -74,7 +75,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
           </div>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-1 p-1 rounded-full bg-[#0A0A0D]/04 border border-[#0A0A0D]/08 backdrop-blur-md">
+          <nav className="hidden md:flex items-center gap-0.5 lg:gap-1 p-1 rounded-full bg-[#0A0A0D]/04 border border-[#0A0A0D]/08 backdrop-blur-md">
             {navLinks.map((link) => {
               if (link.hasDropdown) {
                 return (
@@ -86,7 +87,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
                   >
                     <button
                       onClick={() => scrollTo(link.href)}
-                      className="px-4 py-2 font-mono text-xs uppercase tracking-widest text-[#0A0A0D]/80 hover:text-[#0A0A0D] hover:bg-white/80 rounded-full transition-all cursor-pointer bg-transparent border-none flex items-center gap-1 font-medium"
+                      className="px-2 lg:px-4 py-2 font-mono text-[10px] lg:text-xs uppercase tracking-wide lg:tracking-widest text-[#0A0A0D]/80 hover:text-[#0A0A0D] hover:bg-white/80 rounded-full transition-all cursor-pointer bg-transparent border-none flex items-center gap-1 font-medium"
                     >
                       <span>{link.label}</span>
                       <span className="text-[10px] opacity-60">▾</span>
@@ -130,7 +131,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
                 <button
                   key={link.href}
                   onClick={() => scrollTo(link.href)}
-                  className="px-4 py-2 font-mono text-xs uppercase tracking-widest text-[#0A0A0D]/80 hover:text-[#0A0A0D] hover:bg-white/80 rounded-full transition-all cursor-pointer bg-transparent border-none font-medium"
+                  className="px-2 lg:px-4 py-2 font-mono text-[10px] lg:text-xs uppercase tracking-wide lg:tracking-widest text-[#0A0A0D]/80 hover:text-[#0A0A0D] hover:bg-white/80 rounded-full transition-all cursor-pointer bg-transparent border-none font-medium"
                 >
                   {link.label}
                 </button>
@@ -139,10 +140,10 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
           </nav>
 
           {/* Desktop Right CTA Action */}
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-2 lg:gap-3">
             <button
               onClick={() => onOpenEnquiry ? onOpenEnquiry() : scrollTo("contact")}
-              className="btn-zip-plum px-6 py-3 rounded-full text-xs font-mono tracking-widest flex items-center justify-center cursor-pointer shadow-sm"
+              className="btn-zip-plum px-3 lg:px-6 py-3 rounded-full text-[10px] lg:text-xs font-mono tracking-wide lg:tracking-widest flex items-center justify-center cursor-pointer shadow-sm"
             >
               <span>Start a Project →</span>
             </button>
@@ -151,11 +152,11 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden px-3 py-1.5 rounded-full bg-[#0A0A0D]/05 border border-[#0A0A0D]/10 text-[#0A0A0D] cursor-pointer hover:bg-[#0A0A0D]/10 transition-colors font-mono text-xs font-bold"
-            aria-label="Toggle Menu"
+            className="md:hidden p-2 rounded-full bg-[#0A0A0D]/05 border border-[#0A0A0D]/10 text-[#0A0A0D] cursor-pointer hover:bg-[#0A0A0D]/10 transition-colors"
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
           >
-            {mobileOpen ? "CLOSE" : "MENU"}
+            {mobileOpen ? <X size={20} aria-hidden="true" /> : <Menu size={20} aria-hidden="true" />}
           </button>
         </div>
       </header>
@@ -169,7 +170,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setMobileOpen(false)}
-              className="fixed inset-0 z-[98] bg-[#0A0A0D]/50 backdrop-blur-sm lg:hidden"
+              className="fixed inset-0 z-[98] bg-[#0A0A0D]/50 backdrop-blur-sm md:hidden"
               aria-hidden="true"
             />
 
@@ -178,7 +179,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -16 }}
               transition={{ duration: 0.25, ease: "easeOut" }}
-              className="fixed top-16 sm:top-20 left-3 right-3 sm:left-4 sm:right-4 z-[99] bg-[#F8F8F5] border border-[#0A0A0D]/12 rounded-3xl p-4 sm:p-6 lg:hidden max-h-[85dvh] overflow-y-auto shadow-2xl space-y-3 sm:space-y-4"
+              className="fixed top-16 sm:top-20 left-3 right-3 sm:left-4 sm:right-4 z-[99] bg-[#F8F8F5] border border-[#0A0A0D]/12 rounded-3xl p-4 sm:p-6 md:hidden max-h-[85dvh] overflow-y-auto shadow-2xl space-y-3 sm:space-y-4"
             >
               <div className="space-y-1">
                 {navLinks.map((link) => (
