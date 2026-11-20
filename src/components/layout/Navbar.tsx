@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronDown, ArrowUpRight, MessageSquare } from "lucide-react";
 import ElostaraLogo from "@/components/ElostaraLogo";
 
 interface NavbarProps {
@@ -62,7 +61,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
               className="flex items-center gap-1.5 bg-transparent border-none cursor-pointer p-0 group"
               aria-label="Elostara Solutions Home"
             >
-              <ElostaraLogo variant="dark" className="h-7 sm:h-9 md:h-10 max-w-[150px] sm:max-w-none w-auto hover:opacity-85 transition-opacity" />
+              <ElostaraLogo variant="dark" className="h-8 sm:h-11 md:h-12 max-w-[175px] sm:max-w-[190px] md:max-w-[210px] w-auto object-contain hover:opacity-85 transition-opacity" />
             </button>
 
             <div className="hidden xl:flex items-center gap-2 px-3 py-1 rounded-full bg-[#0A0A0D]/04 border border-[#0A0A0D]/08 font-mono text-[10px] text-[#52525C] uppercase tracking-wider font-semibold">
@@ -90,7 +89,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
                       className="px-4 py-2 font-mono text-xs uppercase tracking-widest text-[#0A0A0D]/80 hover:text-[#0A0A0D] hover:bg-white/80 rounded-full transition-all cursor-pointer bg-transparent border-none flex items-center gap-1 font-medium"
                     >
                       <span>{link.label}</span>
-                      <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${dropdownOpen ? "rotate-180" : ""}`} />
+                      <span className="text-[10px] opacity-60">▾</span>
                     </button>
 
                     {/* Solutions Megamenu Dropdown */}
@@ -143,21 +142,20 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
           <div className="hidden lg:flex items-center gap-3">
             <button
               onClick={() => onOpenEnquiry ? onOpenEnquiry() : scrollTo("contact")}
-              className="btn-zip-plum px-6 py-3 rounded-full text-xs font-mono tracking-widest flex items-center gap-2 cursor-pointer shadow-sm"
+              className="btn-zip-plum px-6 py-3 rounded-full text-xs font-mono tracking-widest flex items-center justify-center cursor-pointer shadow-sm"
             >
-              <MessageSquare className="w-3.5 h-3.5 text-[#CCFF00]" />
-              <span>Start a Project</span>
+              <span>Start a Project →</span>
             </button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2.5 rounded-full bg-[#0A0A0D]/05 border border-[#0A0A0D]/10 text-[#0A0A0D] cursor-pointer hover:bg-[#0A0A0D]/10 transition-colors"
+            className="lg:hidden px-3 py-1.5 rounded-full bg-[#0A0A0D]/05 border border-[#0A0A0D]/10 text-[#0A0A0D] cursor-pointer hover:bg-[#0A0A0D]/10 transition-colors font-mono text-xs font-bold"
             aria-label="Toggle Menu"
             aria-expanded={mobileOpen}
           >
-            {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            {mobileOpen ? "CLOSE" : "MENU"}
           </button>
         </div>
       </header>
@@ -182,7 +180,6 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
               transition={{ duration: 0.25, ease: "easeOut" }}
               className="fixed top-16 sm:top-20 left-3 right-3 sm:left-4 sm:right-4 z-[99] bg-[#F8F8F5] border border-[#0A0A0D]/12 rounded-3xl p-4 sm:p-6 lg:hidden max-h-[85dvh] overflow-y-auto shadow-2xl space-y-3 sm:space-y-4"
             >
-
               <div className="space-y-1">
                 {navLinks.map((link) => (
                   <button
@@ -191,7 +188,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
                     className="w-full text-left px-4 py-3 min-h-[44px] font-mono text-xs uppercase tracking-widest text-[#0A0A0D] font-bold hover:bg-[#0A0A0D]/06 rounded-xl transition-colors cursor-pointer bg-transparent border-none flex items-center justify-between"
                   >
                     <span>{link.label}</span>
-                    <ArrowUpRight className="w-4 h-4 text-[#878794]" />
+                    <span className="text-[#878794]">→</span>
                   </button>
                 ))}
               </div>
@@ -203,10 +200,9 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
                     if (onOpenEnquiry) onOpenEnquiry("Mobile Menu CTA");
                     else scrollTo("contact");
                   }}
-                  className="btn-zip-plum w-full py-4 min-h-[48px] rounded-full font-mono text-xs tracking-widest text-[#FAFAF8] flex items-center justify-center gap-2 cursor-pointer shadow-md"
+                  className="btn-zip-plum w-full py-4 min-h-[48px] rounded-full font-mono text-xs tracking-widest text-[#FAFAF8] flex items-center justify-center cursor-pointer shadow-md"
                 >
-                  <MessageSquare className="w-4 h-4 text-[#CCFF00]" />
-                  <span>TELL US YOUR PROBLEM</span>
+                  <span>TELL US YOUR PROBLEM →</span>
                 </button>
               </div>
             </motion.div>

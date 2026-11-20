@@ -29,6 +29,12 @@ export const metadata: Metadata = {
   keywords: [
     "custom software development",
     "business automation",
+    "AI automation services",
+    "AI website chatbots",
+    "AI voice assistants",
+    "AI customer support",
+    "appointment booking automation",
+    "lead generation automation",
     "WhatsApp automation",
     "web development",
     "mobile app development",
@@ -38,7 +44,6 @@ export const metadata: Metadata = {
     "QR menu ordering",
     "Elostara Solutions",
     "Elostara",
-    "ELOSTARA.",
   ],
   authors: [{ name: "Elostara Solutions", url: "https://elostara.com" }],
   creator: "Elostara Solutions",
@@ -110,7 +115,7 @@ export default function RootLayout({
               "@type": "Organization",
               name: "Elostara Solutions",
               url: "https://elostara.com",
-              logo: "https://elostara.com/logo.png",
+              logo: "https://elostara.com/elostara-logo.png",
               description:
                 "Practical software engineering and business automation company helping businesses build custom web applications, WhatsApp automations, and operational tools.",
               sameAs: [

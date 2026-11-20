@@ -2,19 +2,6 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import {
-  ShieldCheck,
-  Zap,
-  MessageSquare,
-  Clock,
-  Code2,
-  CheckCircle2,
-  Sparkles,
-  ArrowRight,
-  Workflow,
-  Cpu,
-  Layers,
-} from "lucide-react";
 
 export default function About() {
   const ref = useRef<HTMLDivElement>(null);
@@ -22,32 +9,32 @@ export default function About() {
 
   const engineeringPillars = [
     {
+      num: "01",
       title: "We Solve Real Problems",
       description:
         "We never push complicated software you don't need. If a simple QR menu, WhatsApp alert, or booking page fixes your headache, that's exactly what we build.",
       tag: "PRACTICAL FOCUS",
-      icon: Cpu,
     },
     {
+      num: "02",
       title: "Talk Directly to Us",
       description:
         "No call centres, no ticket queues. You talk directly to the person building your product on WhatsApp — any question, any time.",
       tag: "ALWAYS REACHABLE",
-      icon: MessageSquare,
     },
     {
+      num: "03",
       title: "Ready in 1–3 Weeks",
       description:
         "Your business can't wait 6 months. We work fast and deliver working results in 1 to 3 weeks, not months of meetings and wireframes.",
       tag: "FAST DELIVERY",
-      icon: Zap,
     },
     {
+      num: "04",
       title: "We Keep It Running",
       description:
         "After launch, we stay with you. If something goes wrong, we fix it. We keep your site live, secure, and up-to-date — so you never have to worry.",
       tag: "ONGOING SUPPORT",
-      icon: ShieldCheck,
     },
   ];
 
@@ -125,19 +112,19 @@ export default function About() {
 
             <div className="space-y-4 font-mono text-xs">
               <div className="flex items-start gap-3 text-white/90">
-                <CheckCircle2 className="w-4 h-4 text-[#CCFF00] flex-shrink-0 mt-0.5" />
+                <span className="text-[#CCFF00] font-bold select-none">•</span>
                 <span>100% Custom Code — No generic clunky templates</span>
               </div>
               <div className="flex items-start gap-3 text-white/90">
-                <CheckCircle2 className="w-4 h-4 text-[#CCFF00] flex-shrink-0 mt-0.5" />
+                <span className="text-[#CCFF00] font-bold select-none">•</span>
                 <span>Direct WhatsApp communication with your developer</span>
               </div>
               <div className="flex items-start gap-3 text-white/90">
-                <CheckCircle2 className="w-4 h-4 text-[#CCFF00] flex-shrink-0 mt-0.5" />
+                <span className="text-[#CCFF00] font-bold select-none">•</span>
                 <span>Transparent fixed quotes with zero hidden hourly fees</span>
               </div>
               <div className="flex items-start gap-3 text-white/90">
-                <CheckCircle2 className="w-4 h-4 text-[#CCFF00] flex-shrink-0 mt-0.5" />
+                <span className="text-[#CCFF00] font-bold select-none">•</span>
                 <span>Lightning-fast cloud hosting & mobile-first UI</span>
               </div>
             </div>
@@ -147,7 +134,6 @@ export default function About() {
         {/* 4 Engineering Pillars Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {engineeringPillars.map((pillar, idx) => {
-            const PillarIcon = pillar.icon;
             return (
               <motion.div
                 key={pillar.title}
@@ -156,9 +142,9 @@ export default function About() {
                 transition={{ duration: 0.4, delay: idx * 0.08 }}
                 className="p-5 sm:p-7 rounded-3xl bg-white/04 border border-white/08 hover:border-white/20 transition-all duration-300 space-y-4"
               >
-                <div className="w-10 h-10 rounded-2xl bg-white/08 flex items-center justify-center text-[#CCFF00]">
-                  <PillarIcon className="w-5 h-5" />
-                </div>
+                <span className="font-mono text-sm font-bold text-[#CCFF00]">
+                  {pillar.num}
+                </span>
                 <div>
                   <span className="font-mono text-[10px] uppercase tracking-wider text-[#CCFF00] font-bold block mb-1">
                     {pillar.tag}

@@ -102,7 +102,7 @@ export default function BeforeAfter() {
             </div>
           </motion.div>
 
-          {/* With Optqvo */}
+          {/* With Elostara */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -114,7 +114,7 @@ export default function BeforeAfter() {
                 <Check className="w-5 h-5 text-emerald-400" />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-white">The Optqvo Solutions Way</h3>
+                <h3 className="text-lg font-bold text-white">The Elostara Solutions Way</h3>
                 <p className="text-xs text-slate-500">Effortless growth</p>
               </div>
             </div>

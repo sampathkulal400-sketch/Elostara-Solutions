@@ -27,7 +27,7 @@ export default function Footer({ onOpenEnquiry }: FooterProps) {
               className="flex items-center gap-1 bg-transparent border-none cursor-pointer p-0 text-left"
               aria-label="Elostara Solutions Home"
             >
-              <ElostaraLogo variant="light" className="h-8 sm:h-10 md:h-11 max-w-[170px] sm:max-w-none w-auto hover:opacity-85 transition-opacity" />
+              <ElostaraLogo variant="light" className="h-10 sm:h-12 md:h-14 max-w-[190px] sm:max-w-[210px] md:max-w-[230px] w-auto object-contain hover:opacity-85 transition-opacity" />
             </button>
 
             <p className="text-[#FAFAF8]/70 text-sm leading-relaxed max-w-sm font-normal">
@@ -59,12 +59,11 @@ export default function Footer({ onOpenEnquiry }: FooterProps) {
             <ul className="space-y-2 text-[#FAFAF8]/70 list-none p-0 m-0 font-mono text-xs">
               {[
                 { label: "Overview", id: "home" },
-                { label: "Capabilities", id: "services" },
-                { label: "Industry Blueprints", id: "solutions" },
-                { label: "Transformation Engine", id: "custom-solutions" },
-                { label: "Why Elostara Solutions", id: "about" },
+                { label: "Services", id: "services" },
+                { label: "Industry Solutions", id: "solutions" },
+                { label: "Custom Systems", id: "custom-solutions" },
+                { label: "About Us", id: "about" },
                 { label: "FAQ", id: "faq" },
-                { label: "Contact Us", id: "contact" },
               ].map((item) => (
                 <li key={item.id}>
                   <button

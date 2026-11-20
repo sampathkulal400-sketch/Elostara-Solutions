@@ -26,6 +26,10 @@ const faqs = [
     a: "We provide affordable pricing tailored to your exact needs. After a quick chat to understand your problem, we give you a clear, fixed quote before starting — zero surprise fees, zero hidden costs.",
   },
   {
+    q: "How do your AI Automation Services (chatbots, voice agents, workflows) work?",
+    a: "We deploy custom AI chatbots, 24/7 voice assistants, and automated workflows trained on your business data. They resolve 80%+ of customer inquiries, capture qualified leads directly to WhatsApp or Google Sheets, book appointments, and eliminate repetitive staff work.",
+  },
+  {
     q: "Can you help automate repetitive work in WhatsApp or Excel?",
     a: "Yes! This is our most requested service. We set up systems that automatically send WhatsApp customer alerts, follow up on leads, and generate invoices, saving you 15+ hours every single week.",
   },

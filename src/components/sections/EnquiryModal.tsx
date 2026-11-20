@@ -13,13 +13,15 @@ interface EnquiryModalProps {
 }
 
 const categoryPills = [
-  "Restaurants & Cafes",
-  "Retail & Shop",
-  "Hotel & Stay",
-  "Salon & Spa",
-  "Clinic & Doctor",
-  "Education & Coaching",
-  "Real Estate",
+  "AI Website Chatbots",
+  "AI Customer Support",
+  "Lead Gen & Management",
+  "Appointment Automation",
+  "Business Workflow Automation",
+  "Automated Email Follow-ups",
+  "AI Voice Assistants",
+  "Dashboards & Reporting",
+  "Web & Mobile App Development",
   "Unique Custom Problem",
 ];
 

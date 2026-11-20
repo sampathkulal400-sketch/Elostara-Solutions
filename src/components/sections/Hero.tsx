@@ -2,24 +2,6 @@
 
 import { useState, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import {
-  ArrowRight,
-  MessageSquare,
-  Zap,
-  Globe,
-  Database,
-  Smartphone,
-  CheckCircle2,
-  Cpu,
-  Layers,
-  Sparkles,
-  Terminal,
-  Activity,
-  ShieldCheck,
-  ArrowUpRight,
-  Workflow,
-  RefreshCw,
-} from "lucide-react";
 
 interface HeroProps {
   onOpenEnquiry?: (category?: string) => void;
@@ -47,7 +29,6 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
       title: "Your Customers Find You Online",
       tagline: "A website, app, or QR menu that works on any phone",
       metric: "Opens in 1 second",
-      icon: Smartphone,
       description: "We build your digital shop front — a website, QR menu, or booking page your customers can open on any phone in seconds, without downloading anything.",
       status: "ALWAYS ON",
       activeTelemetry: "Works 24 hours, 7 days a week",
@@ -62,7 +43,6 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
       title: "You Get Notified Instantly",
       tagline: "No more missed calls, lost papers, or manual follow-ups",
       metric: "100% Automatic",
-      icon: Cpu,
       description: "When a customer enquires, orders, or books — you get an instant WhatsApp alert. Invoices generate themselves. No copy-pasting, no chasing.",
       status: "ALWAYS RUNNING",
       activeTelemetry: "Nothing slips through the cracks",
@@ -77,7 +57,6 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
       title: "See Your Business Clearly",
       tagline: "Know your sales, orders & customers — all in one place",
       metric: "Always Up-to-Date",
-      icon: Database,
       description: "A simple, clean dashboard showing your daily sales, pending orders, and customer history — like a WhatsApp for your business data, but cleaner.",
       status: "LIVE DASHBOARD",
       activeTelemetry: "Your business numbers, always current",
@@ -95,7 +74,6 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
       ref={ref}
       className="relative pt-24 pb-8 sm:pt-28 sm:pb-12 lg:pt-32 lg:pb-16 overflow-hidden bg-[#F8F8F5]"
     >
-      {/* Background Subtle Tech Matrix & Ambient Blur */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="dot-grid absolute inset-0 opacity-40" />
         <div className="absolute -top-40 -left-20 w-[600px] h-[600px] bg-[#28113B]/04 rounded-full filter blur-[100px]" />
@@ -112,10 +90,10 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
             className="flex flex-wrap items-center gap-2 sm:gap-3 mb-3 sm:mb-4"
           >
             <span className="badge-plum">
-              SOFTWARE & WEB DEVELOPMENT
+              SOFTWARE & AI AUTOMATION
             </span>
             <span className="hidden sm:inline-block font-mono text-[11px] text-[#50505C] uppercase tracking-widest font-semibold">
-              Websites • Web Apps • Automations • Mobile
+              Websites • Web Apps • AI Automations • Mobile
             </span>
           </motion.div>
 
@@ -142,7 +120,7 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
                   transition={{ duration: 0.55, delay: 0.16 }}
                   className="text-base sm:text-xl lg:text-2xl text-[#50505C] font-normal leading-relaxed max-w-2xl"
                 >
-                  Custom websites, mobile apps, WhatsApp automations, and management dashboards built specifically for your day-to-day operations. Clean work, fair pricing, and zero tech jargon.
+                  Custom websites, mobile apps, AI automations, and management dashboards built specifically for your day-to-day operations. Clean work, fair pricing, and zero tech jargon.
                 </motion.p>
               </div>
 
@@ -158,34 +136,31 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
                     onClick={() =>
                       onOpenEnquiry ? onOpenEnquiry("Hero Primary CTA") : scrollTo("contact")
                     }
-                    className="btn-zip-plum w-full sm:w-auto px-7 sm:px-8 py-4 min-h-[50px] sm:min-h-[52px] rounded-full text-xs font-mono tracking-widest text-[#FAFAF8] flex items-center justify-center gap-3 shadow-lg cursor-pointer group"
+                    className="btn-zip-plum w-full sm:w-auto px-7 sm:px-8 py-4 min-h-[50px] sm:min-h-[52px] rounded-full text-xs font-mono tracking-widest text-[#FAFAF8] flex items-center justify-center shadow-lg cursor-pointer"
                   >
-                    <MessageSquare className="w-4 h-4 text-[#CCFF00] group-hover:scale-110 transition-transform" />
-                    <span>DISCUSS YOUR PROJECT</span>
-                    <ArrowRight className="w-4 h-4 text-[#CCFF00] group-hover:translate-x-0.5 transition-transform" />
+                    <span>DISCUSS YOUR PROJECT →</span>
                   </button>
 
                   <button
                     onClick={() => scrollTo("solutions")}
-                    className="btn-zip-outline w-full sm:w-auto px-7 sm:px-8 py-4 min-h-[50px] sm:min-h-[52px] rounded-full text-xs font-mono tracking-widest text-[#0A0A0D] flex items-center justify-center gap-2 cursor-pointer"
+                    className="btn-zip-outline w-full sm:w-auto px-7 sm:px-8 py-4 min-h-[50px] sm:min-h-[52px] rounded-full text-xs font-mono tracking-widest text-[#0A0A0D] flex items-center justify-center cursor-pointer"
                   >
                     <span>EXPLORE SOLUTIONS</span>
-                    <ArrowUpRight className="w-4 h-4 text-[#50505C]" />
                   </button>
                 </div>
 
                 {/* Supporting Trust & Performance Proof Strip */}
                 <div className="pt-5 sm:pt-6 border-t border-[#0A0A0D]/08 grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-4 font-mono text-[11px] text-[#50505C]">
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#28113B] flex-shrink-0" />
+                    <span className="text-[#28113B] font-bold select-none">•</span>
                     <span className="font-medium">Clear, Fixed Pricing</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#28113B] flex-shrink-0" />
+                    <span className="text-[#28113B] font-bold select-none">•</span>
                     <span className="font-medium">Direct Developer Contact</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#28113B] flex-shrink-0" />
+                    <span className="text-[#28113B] font-bold select-none">•</span>
                     <span className="font-medium">Fast 1–3 Week Delivery</span>
                   </div>
                 </div>
@@ -199,7 +174,7 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="lg:col-span-5 flex flex-col"
             >
-              <div className="rounded-3xl bg-[#09090C] text-[#FAFAF8] p-4 sm:p-7 border border-white/10 shadow-[0_24px_50px_rgba(0,0,0,0.14)] flex flex-col justify-between h-full relative overflow-hidden">
+              <div className="rounded-3xl bg-[#09090C] text-[#FAFAF8] p-5 sm:p-7 border border-white/10 shadow-[0_24px_50px_rgba(0,0,0,0.14)] flex flex-col justify-between h-full relative overflow-hidden">
                 {/* Visualizer Header Bar */}
                 <div className="space-y-3 sm:space-y-4">
                   <div className="flex items-center justify-between pb-3 sm:pb-4 border-b border-white/10">
@@ -212,8 +187,8 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
                       </span>
                     </div>
 
-                    <div className="flex items-center gap-1.5 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full bg-white/06 border border-white/10 font-mono text-[9px] sm:text-[10px] text-[#CCFF00]">
-                      <Activity className="w-3 h-3 animate-pulse" />
+                    <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/06 border border-white/10 font-mono text-[9px] sm:text-[10px] text-[#CCFF00]">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#CCFF00] inline-block animate-pulse" />
                       <span>LIVE</span>
                     </div>
                   </div>
@@ -232,11 +207,9 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
                               : "bg-transparent text-white/50 hover:text-white/80 hover:bg-white/05"
                           }`}
                         >
-                          <div className="flex items-center justify-between">
-                            <span className="font-mono text-[8px] sm:text-[9px] font-bold text-[#CCFF00] uppercase">
-                              {node.phase}
-                            </span>
-                          </div>
+                          <span className="font-mono text-[8px] sm:text-[9px] font-bold text-[#CCFF00] uppercase">
+                            {node.phase}
+                          </span>
                           <span className="font-mono text-[8.5px] sm:text-[10px] font-bold truncate">
                             {node.badge}
                           </span>
@@ -248,16 +221,13 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
 
                 {/* Active Node Live Showcase Panel */}
                 <div className="my-4 sm:my-5 p-4 sm:p-5 rounded-2xl bg-white/04 border border-white/08 space-y-3 sm:space-y-4">
-                  <div className="flex items-start justify-between gap-3">
-                    <div>
-                      <span className="font-mono text-[9px] sm:text-[10px] uppercase font-bold text-[#CCFF00] tracking-wider block">
-                        {activeData.badge} • {activeData.metric}
-                      </span>
-                      <h4 className="text-base sm:text-xl font-black text-[#FAFAF8] mt-0.5">
-                        {activeData.title}
-                      </h4>
-                    </div>
-                    
+                  <div>
+                    <span className="font-mono text-[9px] sm:text-[10px] uppercase font-bold text-[#CCFF00] tracking-wider block">
+                      {activeData.badge} • {activeData.metric}
+                    </span>
+                    <h4 className="text-base sm:text-xl font-black text-[#FAFAF8] mt-0.5">
+                      {activeData.title}
+                    </h4>
                   </div>
 
                   <p className="text-xs sm:text-sm text-white/75 leading-relaxed font-normal">
@@ -267,7 +237,7 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
                   {/* Live Simulated Event Dispatch Stream */}
                   <div className="space-y-1.5 pt-2 border-t border-white/08">
                     <span className="font-mono text-[8px] sm:text-[9px] uppercase tracking-widest text-white/40 block">
-                       WHAT HAPPENS AUTOMATICALLY:
+                      WHAT HAPPENS AUTOMATICALLY:
                     </span>
                     <div className="space-y-1">
                       {activeData.events.map((evt) => (
@@ -279,7 +249,7 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
                             <span className="w-1.5 h-1.5 rounded-full bg-[#CCFF00] flex-shrink-0" />
                             <span className="truncate">{evt}</span>
                           </div>
-                          <span className="text-emerald-400 font-bold flex-shrink-0 text-[9px] sm:text-[10px]">✓ Done</span>
+                          <span className="text-emerald-400 font-bold flex-shrink-0 text-[9px] sm:text-[10px]">Done</span>
                         </div>
                       ))}
                     </div>
@@ -297,8 +267,7 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
                     }
                     className="text-[#CCFF00] hover:underline cursor-pointer bg-transparent border-none p-0 flex items-center gap-1 font-bold text-[10px]"
                   >
-                    <span>GET THIS SETUP FOR YOUR BUSINESS</span>
-                    <ArrowRight className="w-3 h-3" />
+                    <span>GET THIS SETUP FOR YOUR BUSINESS →</span>
                   </button>
                 </div>
               </div>

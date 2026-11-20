@@ -34,7 +34,7 @@ export default function Home() {
         {/* 1. Hero: 5-Second Test Clarity */}
         <Hero onOpenEnquiry={handleOpenEnquiry} />
 
-        {/* 2. Services: What Elostara Solutions Can Build */}
+        {/* 2. Services: Full Suite of 12 Services (AI Automation + Software Engineering) */}
         <Services onOpenEnquiry={handleOpenEnquiry} />
 
         {/* 3. Solutions: Solutions Organized by Business Types */}
