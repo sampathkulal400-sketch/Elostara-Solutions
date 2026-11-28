@@ -23,7 +23,6 @@ const categoryPills = [
   "Automated Email Follow-ups",
   "AI Voice Assistants",
   "Dashboards & Reporting",
-  "Performance Marketing",
   "Web & Mobile App Development",
   "Unique Custom Problem",
 ];

@@ -90,10 +90,10 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
             className="flex flex-wrap items-center gap-2 sm:gap-3 mb-3 sm:mb-4"
           >
             <span className="badge-plum">
-              SOFTWARE, AI & PERFORMANCE MARKETING
+              SOFTWARE & AI AUTOMATION
             </span>
             <span className="hidden sm:inline-block font-mono text-[11px] text-[#50505C] uppercase tracking-widest font-semibold">
-              Websites • Web Apps • AI Automations • Performance Marketing
+              Websites • Web Apps • AI Automations
             </span>
           </motion.div>
 
@@ -108,9 +108,9 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
                   transition={{ duration: 0.55, delay: 0.08 }}
                   className="display-hero-title text-[#0A0A0D]"
                 >
-                  SOFTWARE, AUTOMATION &{" "}
+                  SOFTWARE &{" "}
                   <span className="block mt-1 sm:mt-2">
-                    <span className="highlight-lime">MARKETING THAT GROW YOUR BUSINESS.</span>
+                    <span className="highlight-lime">AUTOMATION THAT GROWS YOUR BUSINESS.</span>
                   </span>
                 </motion.h1>
 
@@ -120,7 +120,7 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
                   transition={{ duration: 0.55, delay: 0.16 }}
                   className="text-base sm:text-xl lg:text-2xl text-[#50505C] font-normal leading-relaxed max-w-2xl"
                 >
-                  Custom websites, mobile apps, AI automations, performance marketing, and management dashboards built specifically for your day-to-day operations. Clean work, fair pricing, and zero tech jargon.
+                  Custom websites, mobile apps, AI automations, and management dashboards built specifically for your day-to-day operations. Clean work, fair pricing, and zero tech jargon.
                 </motion.p>
               </div>
 

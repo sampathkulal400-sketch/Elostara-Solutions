@@ -34,7 +34,7 @@ export default function Home() {
         {/* 1. Hero: 5-Second Test Clarity */}
         <Hero onOpenEnquiry={handleOpenEnquiry} />
 
-        {/* 2. Services: AI, Software, and Performance Marketing */}
+        {/* 2. Services: AI and Software */}
         <Services onOpenEnquiry={handleOpenEnquiry} />
 
         {/* 3. Solutions: Solutions Organized by Business Types */}

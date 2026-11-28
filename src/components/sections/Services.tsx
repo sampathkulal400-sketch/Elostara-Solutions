@@ -10,12 +10,12 @@ interface ServicesProps {
   onOpenEnquiry?: (category?: string) => void;
 }
 
-export type ServiceCategory = "all" | "ai" | "marketing" | "software";
+export type ServiceCategory = "all" | "ai" | "software";
 
 export interface ServiceItem {
   num: string;
   id: string;
-  category: "ai" | "marketing" | "software";
+  category: "ai" | "software";
   categoryLabel: string;
   title: string;
   subtitle: string;
@@ -258,25 +258,6 @@ export const servicesList: ServiceItem[] = [
     usefulFor: "Retail stores, Boutiques, Manufacturers, Wholesalers",
     badge: "SELL ONLINE EASILY",
   },
-  {
-    num: "13",
-    id: "performance-marketing",
-    category: "marketing",
-    categoryLabel: "Performance Marketing",
-    title: "Performance Marketing",
-    subtitle: "Turn ad spend into measurable leads and sales.",
-    short: "Data-driven advertising campaigns focused on generating qualified leads, conversions, and measurable returns.",
-    description:
-      "We plan, launch, track, and optimize paid campaigns across Google and social platforms to help your business reach high-intent customers and grow profitably.",
-    whatWeProvide: [
-      "Google Ads & Meta Ads campaign setup",
-      "Audience targeting and ad creative strategy",
-      "Landing page and conversion optimization",
-      "Lead tracking, reporting, and campaign optimization",
-    ],
-    usefulFor: "Retail, Real Estate, Clinics, Education, Restaurants, Service Businesses",
-    badge: "MEASURED GROWTH",
-  },
 ];
 
 export default function Services({ onOpenEnquiry }: ServicesProps) {
@@ -355,16 +336,6 @@ export default function Services({ onOpenEnquiry }: ServicesProps) {
             >
                 AI Automation (8)
             </button>
-              <button
-                onClick={() => setActiveCategory("marketing")}
-                className={`px-4 py-2 rounded-full font-mono text-xs uppercase tracking-wider font-bold transition-all cursor-pointer ${
-                  activeCategory === "marketing"
-                    ? "bg-[#28113B] text-[#CCFF00] shadow-md"
-                    : "bg-[#0A0A0D]/05 text-[#50505C] hover:bg-[#0A0A0D]/10 hover:text-[#0A0A0D]"
-                }`}
-              >
-                Performance Marketing (1)
-              </button>
             <button
               onClick={() => setActiveCategory("software")}
               className={`px-4 py-2 rounded-full font-mono text-xs uppercase tracking-wider font-bold transition-all cursor-pointer ${

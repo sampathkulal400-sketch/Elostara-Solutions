@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: "%s | Elostara Solutions",
   },
   description:
-    "Elostara Solutions helps businesses build, automate, market and scale through custom web applications, WhatsApp automations, operational dashboards, mobile apps, performance marketing, and business software.",
+    "Elostara Solutions helps businesses build, automate, and scale through custom web applications, WhatsApp automations, operational dashboards, mobile apps, and business software.",
   keywords: [
     "custom software development",
     "business automation",
@@ -36,10 +36,6 @@ export const metadata: Metadata = {
     "appointment booking automation",
     "lead generation automation",
     "WhatsApp automation",
-    "performance marketing",
-    "Google Ads",
-    "Meta Ads",
-    "lead generation marketing",
     "web development",
     "mobile app development",
     "business dashboard",
